@@ -1,8 +1,9 @@
-fun main(args: Array<String>) {
 
+import java.util.Arrays
+fun main(args: Array<String>) {
     //Number 1 Answer
-    var no:Array<Int> = arrayOf(4,5,6)
-    var no2:Array<Int> = arrayOf(4, 5,6)
+    var no:Array<Int> = arrayOf(1, 1)
+    var no2:Array<Int> = arrayOf()
 
 //    println( sameFirstLast(no))
 
@@ -40,7 +41,13 @@ fun main(args: Array<String>) {
   // no 12 Answer
 //  println(no23(no))
     //No 13 Answer
-    println(makeLast(no))
+//    println(makeLast(no))
+    //No 14 Answer
+//    println(double23(no))
+//    Number 15 Answer
+//    println(fix23(no))
+    //No 16
+    println(start1(no,no2))
 }
 
 
@@ -154,4 +161,51 @@ fun makeLast(array: Array<Int> ):String{
 
 
 return "${"0,".repeat(array.size+array.size-1)}${array[array.size-1]}"
+}
+
+// Number 14
+fun double23(array: Array<Int> ):Boolean{
+    var result:Boolean = false
+    if(array.size===2 ){
+        if(array.contains(2) || array.contains(3)) {
+
+            result  = array[0]===array[1]
+        }
+    }
+    return result
+}
+//Number 15
+fun fix23(array: Array<Int> ):String{
+    var result:String="";
+    if(array.size===3){
+
+        if(array.contains(2) && array.contains(3)){
+
+            if(!array[0].equals(3)){
+                if(array[array.indexOf(3)-1]===2){
+                    array[array.indexOf(3)]=0
+                }
+            }
+
+        }
+
+        result = Arrays.toString(array)
+
+    } else{
+        result = "Array length is greater or smaller than 3 "
+    }
+    return result
+}
+
+//Number 16
+fun start1(arrayA: Array<Int> , arrayB: Array<Int>):Int {
+    var result: Int = 0
+
+
+    if (arrayA.contains(1) && arrayB.contains(1)) {
+        result= 2
+    }else if(arrayA.contains(1) && !arrayB.contains(1)){
+        result=1
+    }
+    return result
 }
